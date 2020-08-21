@@ -328,7 +328,7 @@ Public Class frmMain
         Dim ColonisationTechnology As New Research(10000, 20000, 10000, "ColonisationTech", ColonisationRequirements, 5)
         Dim HyperspaceEngineTechnology As New Research(60000, 120000, 40000, "HyperspaceEngineTech", HyperspaceEngineRequirements, 7)
 
-        WarpDriveTechnologyRequirements.Add(HyperspaceEngineTechnology)
+        ' WarpDriveTechnologyRequirements.Add(HyperspaceEngineTechnology)
 
         Dim WarpDriveTechnology As New Research(1000000, 1000000, 500000, "WarpDriveTech", WarpDriveTechnologyRequirements, 10)
 
@@ -348,7 +348,7 @@ Public Class frmMain
         Dim sqlquery As String = sql
         Dim ConnectionString As String
         Dim Result As String = ""
-        ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\alem2\Downloads\Dropbox\GameServer\GameServer\GameServer\GameServer\Database1.mdf;Integrated Security=True"
+        ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\alem2\Documents\GameServer\GameServer\Database1.mdf;Integrated Security=True"
 
         'Connect
         Using conn As SqlConnection = New SqlConnection(ConnectionString)
@@ -372,7 +372,7 @@ Public Class frmMain
     Public Function GetDataTable(Sql As String) As DataTable
         'the DataTable to return
         Dim MyDataTable As New DataTable
-        Dim ConnectionString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\alem2\Downloads\Dropbox\GameServer\GameServer\GameServer\GameServer\Database1.mdf;Integrated Security=True"
+        Dim ConnectionString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\alem2\Documents\GameServer\GameServer\Database1.mdf;Integrated Security=True"
         'make a SqlConnection using the supplied ConnectionString 
         Dim MySqlConnection As New SqlConnection(ConnectionString)
         Using MySqlConnection
@@ -398,7 +398,7 @@ Public Class frmMain
         Return MyDataTable
     End Function
     Public Function InsertSQL(sql As String) As Boolean
-        Using conn As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\alem2\Downloads\Dropbox\GameServer\GameServer\GameServer\GameServer\Database1.mdf;Integrated Security=True")
+        Using conn As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\alem2\Documents\GameServer\GameServer\Database1.mdf;Integrated Security=True")
             Using comm As New SqlCommand()
                 With comm
                     .Connection = conn
